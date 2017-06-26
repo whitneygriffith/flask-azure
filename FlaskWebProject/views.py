@@ -7,6 +7,7 @@ from flask import render_template
 from FlaskWebProject import app
 
 @app.route('/')
+
 @app.route('/home')
 def home():
     """Renders the home page."""
@@ -14,4 +15,12 @@ def home():
         'index.html',
         title='Home Page',
         year=datetime.now().year,
+    )
+
+@app.route('/awesome')
+def awesome():
+    """Renders the awesome page."""
+    return render_template(
+        'awesome.html',
+        title='Awesome',
     )
